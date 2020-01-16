@@ -1900,6 +1900,21 @@ _**default value**_:
 0
 ```
 
+### compareClientSecret
+
+Function used to compare the provided client secret in the request and the expected client secret. The return value should be:   
+ - true if the provided secret is valid
+ - falsy otherwise   
+  
+
+
+_**default value**_:
+```js
+function compareClientSecret(ctx, actual, expected) {
+  return constantEquals(expected, actual, 1000);
+}
+```
+
 ### conformIdTokenClaims
 
 ID Token only contains End-User claims when the requested `response_type` is `id_token`  
